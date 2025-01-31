@@ -18,3 +18,7 @@ services:
       - db
     environment:
       - DATABASE_URL=mysql://root:supersecret@db:3306/ece140a-lab4
+    # bind COPY ./app /code/app and make sure fastapi runs with reload for this CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    volumes:
+      - ./app:/code/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

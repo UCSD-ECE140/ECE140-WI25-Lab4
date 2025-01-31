@@ -20,6 +20,7 @@ def init_db():
         )
     """
     )
+    print("Look at database.py line 14 we ran the command to initialize the database by creating the table for youps")
     db.commit()
     cursor.close()
     db.close()
